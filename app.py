@@ -31,7 +31,7 @@ def enviar_email_notificacao(dados):
         corpo = f"Uma nova informação foi enviada ao sistema:\n\nNome: {dados['nome']}\nE-mail: {dados['email']}\nMensagem: {dados['mensagem']}"
         msg.attach(MIMEText(corpo, 'plain'))
 
-        # Envio do e-mail
+        
         with smtplib.SMTP(EMAIL_HOST, EMAIL_PORT) as server:
             server.starttls()
             server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
